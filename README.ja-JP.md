@@ -1,7 +1,4 @@
-# NewsNow
-
-![](screenshots/preview-1.png)
-![](screenshots/preview-2.png)
+![](/public/og-image.png)
 
 [English](./README.md) | [简体中文](README.zh-CN.md) | 日本語
 
@@ -16,6 +13,17 @@
 - GitHub OAuthログインとデータ同期
 - デフォルトのキャッシュ期間は30分（ログインユーザーは強制更新可能）
 - リソース使用を最適化し、IPブロックを防ぐためのソース更新頻度に基づく適応型スクレイピング間隔（最短2分）
+- MCPサーバーをサポート
+
+> [!IMPORTANT]
+> [Context Space](https://github.com/context-space/context-space) がスポンサー
+>
+> [Context Space](https://github.com/context-space/context-space) は完全オープンソースで、AI Agent の最強コンテキストエンジニアリングインフラを目指しています。現在開発中ですが、すでに多数のツール（Integration/MCP Server）を提供しており、API キーの設定やローカル環境の構築なしで直接利用できます。
+>
+
+[Context Space](https://context.space/integration/newsnow_mcp) で Newsnow + AI の魔法のような体験をしてみて、ワンクリックで Cursor にインストールしてさらに快適に使えます。
+
+![Context Space](https://cdn-bucket.tos-cn-hongkong.volces.com/resources/20250717191541392_1752750943299.png)
 
 ## デプロイ
 

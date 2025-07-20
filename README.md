@@ -1,41 +1,54 @@
-# NewsNow
-
-![](screenshots/preview-1.png)
-
-![](screenshots/preview-2.png)
+![](/public/og-image.png)
 
 English | [简体中文](README.zh-CN.md) | [日本語](README.ja-JP.md)
 
 > [!NOTE]
 > This is a demo version currently supporting Chinese only. A full-featured version with better customization and English content support will be released later.
 
-***Elegant reading of real-time and hottest news***
+**_Elegant reading of real-time and hottest news_**
 
 ## Features
+
 - Clean and elegant UI design for optimal reading experience
 - Real-time updates on trending news
 - GitHub OAuth login with data synchronization
 - 30-minute default cache duration (logged-in users can force refresh)
 - Adaptive scraping interval (minimum 2 minutes) based on source update frequency to optimize resource usage and prevent IP bans
+- support MCP server
+
+> [!IMPORTANT]
+> Sponsored by [Context Space](https://github.com/context-space/context-space)
+>
+> [Context Space](https://github.com/context-space/context-space) is fully open-source and aims to become the ultimate context engineering infrastructure for AI Agent. Currently in development, it already provides numerous tools (Integration/MCP Server) for direct use without API key configuration or local environment setup.
+>
+
+Experience the magic of Newsnow + AI at [Context Space](https://context.space/integration/newsnow_mcp), and install it to Cursor with one click for an enhanced experience.
+
+![Context Space](https://cdn-bucket.tos-cn-hongkong.volces.com/resources/20250717191541392_1752750943299.png)
 
 ## Deployment
 
 ### Basic Deployment
+
 For deployments without login and caching:
+
 1. Fork this repository
 2. Import to platforms like Cloudflare Page or Vercel
 
 ### Cloudflare Page Configuration
+
 - Build command: `pnpm run build`
 - Output directory: `dist/output/public`
 
 ### GitHub OAuth Setup
+
 1. [Create a GitHub App](https://github.com/settings/applications/new)
 2. No special permissions required
 3. Set callback URL to: `https://your-domain.com/api/oauth/github` (replace `your-domain` with your actual domain)
 4. Obtain Client ID and Client Secret
 
 ### Environment Variables
+
 Refer to `example.env.server`. For local development, rename it to `.env.server` and configure:
 
 ```env
@@ -52,23 +65,27 @@ ENABLE_CACHE=true
 ```
 
 ### Database Support
+
 Supported database connectors: https://db0.unjs.io/connectors
 **Cloudflare D1 Database** is recommended.
+
 1. Create D1 database in Cloudflare Worker dashboard
 2. Configure database_id and database_name in wrangler.toml
 3. If wrangler.toml doesn't exist, rename example.wrangler.toml and modify configurations
 4. Changes will take effect on next deployment
 
 ### Docker Deployment
+
 In project root directory:
 
 ```sh
 docker compose up
- ```
+```
 
 You can also set Environment Variables in `docker-compose.yml`.
 
 ## Development
+
 > [!Note]
 > Requires Node.js >= 20
 
@@ -76,21 +93,28 @@ You can also set Environment Variables in `docker-compose.yml`.
 corepack enable
 pnpm i
 pnpm dev
- ```
+```
 
 ### Adding Data Sources
-Refer to `shared/sources` and `server/source`s directories. The project provides complete type definitions and a clean architecture.
+
+Refer to `shared/sources` and `server/sources` directories. The project provides complete type definitions and a clean architecture.
+
+For detailed instructions on how to add new sources, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Roadmap
+
 - Add **multi-language support** (English, Chinese, more to come).
 - Improve **personalization options** (category-based news, saved preferences).
 - Expand **data sources** to cover global news in multiple languages.
 
-***release when ready***
+**_release when ready_**
 ![](https://testmnbbs.oss-cn-zhangjiakou.aliyuncs.com/pic/20250328172146_rec_.gif?x-oss-process=base_webp)
 
 ## Contributing
+
 Contributions are welcome! Feel free to submit pull requests or create issues for feature requests and bug reports.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on how to contribute, especially for adding new data sources.
 
 ## License
 
